@@ -1,0 +1,30 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="masthead-heading mb-0">Eventos TI</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-bordered">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Organizador</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Formato</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for e in eventos %}
+      <tr>
+        <th scope="row">{{ e.id }}</th>
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.organizador }}</td>
+        <td>{{ e.fecha }}</td>
+        <td>{{ e.formato }}</td>
+      </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

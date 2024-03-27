@@ -1,0 +1,20 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="masthead-heading mb-0">Blog</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+{% for b in blog %}
+<div class="card mb-3">
+    <div class="card-header bg-dark text-white">{{ b.nombre }}</div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ b.descripcion }}</p>
+        <footer class="blockquote-footer">{{ b.fecha }} <cite title="Source Title">{{ b.autor }}</cite></footer>
+      </blockquote>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock contenido %}

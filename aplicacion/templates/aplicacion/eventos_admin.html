@@ -1,0 +1,56 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="masthead-heading mb-0">Eventos TI (Admin)</h1>
+<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'eventos' %}">Ver página de eventos</a>
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+  <tr>
+    <td width="200"><h2>Eventos TI</h2></td>
+    <td>
+      <a href="{% url 'eventos_create' %}" class="btn btn-primary btn-sm">
+        <i class="fa fa-plus fa-lg" title="Crear"></i>
+      </a>
+    </td>
+  </tr>
+</table>
+<table class="table table-bordered">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Organizador</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Formato</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for e in eventos %}
+      <tr>
+        <th scope="row">{{ e.id }}</th>
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.organizador }}</td>
+        <td>{{ e.fecha }}</td>
+        <td>{{ e.formato }}</td>
+        <td>
+          <a
+            href="{% url 'eventos_update' e.id %}"
+            class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+          </a>
+          <a
+            href="{% url 'eventos_delete' e.id %}"
+            class="btn btn-danger"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+          </a>
+        </td>
+      </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

@@ -1,0 +1,14 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="masthead-heading mb-0">Logout</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="text-center py-4">
+    <h2>
+        <p style="color:red" align="center">Se ha deslogueado exitosamente</p>
+    </h2>
+    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'home' %}">Ir a Inicio</a>
+</div>
+{% endblock contenido %}

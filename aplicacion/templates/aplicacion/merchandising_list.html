@@ -1,0 +1,56 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<h1 class="masthead-heading mb-0">Merchandising</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<div>
+{% for m in merchandising_list %}
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-12 col-xl-12">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-8 col-lg-8 col-xl-8">
+                <h5>{{ m.nombre }}</h5>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-1 me-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <span>{{ m.valoraciones }}</span>
+                </div>
+                <p class="mb-4 mb-md-0">
+                  {{ m.descripcion }}
+                </p>
+              </div>
+              <div class="col-md-4 col-lg-4 col-xl-4 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  <h4 class="mb-1 me-1">{{ m.precio }}</h4>
+                  <span class="text-danger"><s>{{ m.descuento }}</s></span>
+                </div>
+                <h6>{{ m.delivery }}</h6>
+                <div class="d-flex flex-column mt-4">
+                  <button class="btn btn-primary btn-sm" type="button">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock contenido %}
