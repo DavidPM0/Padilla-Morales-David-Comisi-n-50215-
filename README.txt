@@ -25,3 +25,9 @@ Clave: 12345
 Usuario Prueba:
 Usuario_test: demo
 Clave: coder1234@
+
+link de la página: https://davidpadilla30.pythonanywhere.com/
+link del video: https://www.awesomescreenshot.com/video/26206360?key=63da20ea117d50a9a407b28cc1ea8e99
+
+Buscador de eventos:
+En la página de inicio se encuentra un buscador que filtra por el nombre del evento.
